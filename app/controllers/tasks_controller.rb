@@ -17,8 +17,8 @@ class TasksController < ApplicationController
   end
 
   def update
-    task.update!(task_params)
-    redirect_to tasks_url, notice: "タスク「#{task.name}」が更新されました"
+    @task.update!(task_params)
+    redirect_to tasks_url, notice: "タスク「#{@task.name}」が更新されました"
   end
 
   def create
@@ -32,8 +32,8 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    task.destroy
-    redirect_to tasks_url, notice: "タスク「#{task.name}」を削除しました"
+    @task.destroy
+    redirect_to tasks_url, notice: "タスク「#{@task.name}」を削除しました"
   end
 
   private
